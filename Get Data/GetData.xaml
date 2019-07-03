@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="InitConfig" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_SystemException" Type="OutArgument(s:Exception)" />
     <x:Property Name="out_Succeeded" Type="OutArgument(x:Boolean)" />
@@ -6,8 +6,8 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>480,989.6</sap:VirtualizedContainerService.HintSize>
-  <sap2010:WorkflowViewState.IdRef>InitConfig_1</sap2010:WorkflowViewState.IdRef>
+  <sap:VirtualizedContainerService.HintSize>480,500.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>GetData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -56,23 +56,23 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Initialize Config" DisplayName="InitConfig" sap:VirtualizedContainerService.HintSize="440,444" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Get Data from excel and store it in Table variable" DisplayName="GetData" sap:VirtualizedContainerService.HintSize="440,420.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="417.6,291.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="417.6,268" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Init Config" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Get Data" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign sap:VirtualizedContainerService.HintSize="436.8,60" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="s:Exception">[out_SystemException]</OutArgument>
             </Assign.To>
@@ -80,7 +80,7 @@
               <InArgument x:TypeArguments="s:Exception">[nothing]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <Assign sap:VirtualizedContainerService.HintSize="436.8,60" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_Succeeded]</OutArgument>
             </Assign.To>
@@ -88,14 +88,30 @@
               <InArgument x:TypeArguments="x:Boolean">False</InArgument>
             </Assign.Value>
           </Assign>
-          <Sequence DisplayName="Config" sap:VirtualizedContainerService.HintSize="243.2,100.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Get Data into Table" sap:VirtualizedContainerService.HintSize="436.8,335.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="414.4,210.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="Data\Sample AMPS Log June 2019.xls">
+              <ui:ExcelApplicationScope.Body>
+                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,100.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ExcelApplicationScope.Body>
+            </ui:ExcelApplicationScope>
           </Sequence>
-          <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign sap:VirtualizedContainerService.HintSize="436.8,60" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_Succeeded]</OutArgument>
             </Assign.To>
@@ -105,45 +121,6 @@
           </Assign>
         </Sequence>
       </TryCatch.Try>
-      <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ActivityAction x:TypeArguments="s:Exception">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Exception Occured" sap:VirtualizedContainerService.HintSize="336.8,417.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[exception.Message.ToString]" />
-              <Assign sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="s:Exception">[out_SystemException]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="s:Exception">[exception]</InArgument>
-                </Assign.Value>
-              </Assign>
-              <Assign sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:Boolean">[out_Succeeded]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                </Assign.Value>
-              </Assign>
-            </Sequence>
-          </ActivityAction>
-        </Catch>
-      </TryCatch.Catches>
     </TryCatch>
   </Sequence>
 </Activity>
