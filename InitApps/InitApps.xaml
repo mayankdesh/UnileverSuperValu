@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property Name="out_SystemException" Type="OutArgument(s:Exception)" />
     <x:Property Name="out_Succeeded" Type="OutArgument(x:Boolean)" />
-    <x:Property Name="inout_ProjectConfig" Type="InOutArgument(scg:Dictionary(x:String, ui:GenericValue))" />
+    <x:Property Name="in_ProjectConfig" Type="InArgument(scg:Dictionary(x:String, ui:GenericValue))" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -63,7 +63,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;In InitConfig...&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;In InitApps...&quot;]" />
     <Assign DisplayName="Initialise exception to null" sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="s:Exception">[out_SystemException]</OutArgument>

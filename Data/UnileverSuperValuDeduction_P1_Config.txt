@@ -1,9 +1,0 @@
-[{ "name":"UnileverSuperValuDeduction_P1", "type":"local", "defaultValue":"MyProject" }, 
-{ "name":"client", "type":"local", "defaultValue":"FYI" }, 
-{ "name":"StopAfterCount", "type":"local", "defaultValue":"1" }, 
-{ "name":"ResetAfterCount", "type":"local", "defaultValue":"-1" }, 
-{ "name":"ReportPath", "type":"local", "defaultValue":"C:\\Users\\deshw\\Documents\\UiPath\\UnileverSuperValuDeduction_P1\\Data\\Sample AMPS Log June 2019.xls" }, 
-{ "name":"CommonExceptionHandler", "type":"local", "defaultValue":"test_tobeAsset" },
-{ "name":"CommonLog", "type":"local", "defaultValue":"test_tobeAsset" },
-{ "name":"MaxProjectRetries", "type":"local", "defaultValue":"3" },
-{ "name":"ToBeAsset", "type":"local", "defaultValue":"ReportPath_CommonLog_CommonExceptionHandler_MaxProjectRetries" }]

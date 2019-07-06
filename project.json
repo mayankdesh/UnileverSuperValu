@@ -3,6 +3,7 @@
   "description": "UnileverSuperValuDeduction_P1",
   "main": "UnileverSuperValu_HighLevel.xaml",
   "dependencies": {
+    "adjunct-System.IO.DirectoryInfoExtensions": "[2.0.0]",
     "Microsoft.Activities.Extensions": "[2.0.6.9]",
     "UiPath.Excel.Activities": "[2.6.0]",
     "UiPath.Mail.Activities": "[1.5.0]",
