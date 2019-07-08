@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>480,1044</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>480,2051.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -60,9 +60,9 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ProcessData" sap:VirtualizedContainerService.HintSize="626.4,4199.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ProcessData" sap:VirtualizedContainerService.HintSize="440,1971.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="ui:GenericValue" Name="sheetName" />
+      <Variable x:TypeArguments="x:String" Name="sheetName" />
       <Variable x:TypeArguments="sd:DataTable" Name="deductionReportData" />
       <Variable x:TypeArguments="x:String" Name="currentRefNumber" />
       <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="myQueueItems" />
@@ -106,10 +106,10 @@
           </Assign>
           <Assign DisplayName="Assign sheet name" sap:VirtualizedContainerService.HintSize="352.8,60" sap2010:WorkflowViewState.IdRef="Assign_7">
             <Assign.To>
-              <OutArgument x:TypeArguments="ui:GenericValue">[sheetName]</OutArgument>
+              <OutArgument x:TypeArguments="x:String">[sheetName]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="ui:GenericValue">[in_ProjectConfig.Item("USVD_P1_ReportPath_SheetName").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_ProjectConfig.Item("USVD_ReportPath_SheetName").ToString]</InArgument>
             </Assign.Value>
           </Assign>
           <Assign DisplayName="Set select folder value" sap:VirtualizedContainerService.HintSize="352.8,60" sap2010:WorkflowViewState.IdRef="Assign_21">
@@ -117,7 +117,7 @@
               <OutArgument x:TypeArguments="x:String">[selectFolder]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[in_ProjectConfig.Item("USVD_P1_ReportPath").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_ProjectConfig.Item("USVD_ReportPath").ToString]</InArgument>
             </Assign.Value>
           </Assign>
           <Assign DisplayName="Set archive folder value" sap:VirtualizedContainerService.HintSize="352.8,60" sap2010:WorkflowViewState.IdRef="Assign_22">
@@ -125,7 +125,7 @@
               <OutArgument x:TypeArguments="x:String">[archiveFolder]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[in_ProjectConfig.Item("USVD_P1_Archive").ToString &amp; "\" &amp; System.DateTime.Now.ToString(“yyyy-MM-dd”)]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_ProjectConfig.Item("USVD_Archive").ToString &amp; "\" &amp; System.DateTime.Now.ToString(“yyyy-MM-dd”)]</InArgument>
             </Assign.Value>
           </Assign>
           <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Directory" sap:VirtualizedContainerService.HintSize="352.8,22.4" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[archiveFolder]" />
@@ -185,7 +185,7 @@
                           </Assign>
                         </If.Else>
                       </If>
-                      <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="468,22.4" sap2010:WorkflowViewState.IdRef="GetQueueItems_3" QueueItemStates="New, InProgress, Failed, Successful, Retried" QueueName="[in_ProjectConfig.Item(&quot;USVD_P1_QueueName&quot;).ToString]" Reference="[currentRefNumber]" Result="[myQueueItems]" />
+                      <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="468,22.4" sap2010:WorkflowViewState.IdRef="GetQueueItems_3" QueueItemStates="New, InProgress, Failed, Successful, Retried" QueueName="[in_ProjectConfig.Item(&quot;USVD_QueueName_Report&quot;).ToString]" Reference="[currentRefNumber]" Result="[myQueueItems]" />
                       <If Condition="[myQueueItems isNot Nothing AndAlso myQueueItems.Count &gt; 0]" DisplayName="Validate Queue Items" sap:VirtualizedContainerService.HintSize="468,52.8" sap2010:WorkflowViewState.IdRef="If_1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -215,7 +215,7 @@
                       </Assign>
                     </Sequence>
                   </While>
-                  <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[deductionReportData]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="314.4,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                  <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[deductionReportData]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="564,1544" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
@@ -338,7 +338,7 @@
                               </Assign>
                             </If.Else>
                           </If>
-                          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="511.2,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_ProjectConfig.Item(&quot;USVD_P1_QueueName&quot;).ToString]" Reference="[currentRefNumber]">
+                          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="511.2,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_ProjectConfig.Item(&quot;USVD_QueueName_Report&quot;).ToString]" Reference="[currentRefNumber]">
                             <ui:AddQueueItem.ItemInformation>
                               <InArgument x:TypeArguments="x:String" x:Key="Ref Nr">[currentRefNumber]</InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="Cust Ref Nr">[currentCustRefNr]</InArgument>

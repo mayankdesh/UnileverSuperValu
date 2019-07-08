@@ -59,12 +59,12 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID6" sap2010:Annotation.AnnotationText="* Read project configuration&#xA;* Initialise variales&#xA;* Check assets, queue, etc, are set up" DisplayName="InitConfig" sap:VirtualizedContainerService.HintSize="232.8,208" sap2010:WorkflowViewState.IdRef="State_2">
+    <State x:Name="__ReferenceID6" sap2010:Annotation.AnnotationText="* Read project configuration&#xA;* Initialise variales&#xA;* Check assets, queue, etc, are set up" DisplayName="InitConfig" sap:VirtualizedContainerService.HintSize="325.6,559.2" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
-        <Sequence DisplayName="InitConfig" sap:VirtualizedContainerService.HintSize="336.8,720" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="InitConfig" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -101,7 +101,7 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">137.6,132</av:Point>
-          <av:Size x:Key="ShapeSize">232.8,208</av:Size>
+          <av:Size x:Key="ShapeSize">232.8,192</av:Size>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Double x:Key="StateContainerWidth">218.71856238049881</x:Double>
           <x:Double x:Key="StateContainerHeight">94.804372353963629</x:Double>
@@ -109,10 +109,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <State.Exit>
-        <Sequence DisplayName="Init Exit" sap:VirtualizedContainerService.HintSize="336.8,390.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence DisplayName="Init Exit" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -126,7 +126,7 @@
         <Transition DisplayName="Init Error" sap:VirtualizedContainerService.HintSize="429.6,511.2" sap2010:WorkflowViewState.IdRef="Transition_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:PointCollection x:Key="ConnectorLocation">242.36,340 242.36,551.2 468.4,551.2</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">242.36,324 242.36,551.2 468.4,551.2</av:PointCollection>
               <x:Int32 x:Key="SrcConnectionPointIndex">35</x:Int32>
               <x:Int32 x:Key="DestConnectionPointIndex">41</x:Int32>
             </scg:Dictionary>
@@ -272,7 +272,7 @@
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.Condition>[processComplete or succeeded]</Transition.Condition>
                           <Transition.To>
-                            <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="* Any process clean up&#xD;&#xA;* Potentially trigger report/email" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="242.4,191.2" sap2010:WorkflowViewState.IdRef="State_11" IsFinal="True">
+                            <State x:Name="__ReferenceID4" sap2010:Annotation.AnnotationText="* Any process clean up&#xA;* Potentially trigger report/email" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="242.4,191.2" sap2010:WorkflowViewState.IdRef="State_11" IsFinal="True">
                               <State.Entry>
                                 <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Job Done&quot;]" TopMost="True" />
                               </State.Entry>
@@ -383,7 +383,7 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <Transition.Condition>[succeeded]</Transition.Condition>
                                   <Transition.To>
-                                    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="* Get input data for next iteration" DisplayName="GetData" sap:VirtualizedContainerService.HintSize="512,3202.4" sap2010:WorkflowViewState.IdRef="State_13">
+                                    <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="* Get input data for next iteration" DisplayName="GetData" sap:VirtualizedContainerService.HintSize="239.2,208" sap2010:WorkflowViewState.IdRef="State_13">
                                       <State.Entry>
                                         <Sequence DisplayName="Check data fetch should occur -&gt; if so, invoke workflow" sap:VirtualizedContainerService.HintSize="486.4,2396.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                           <sap:WorkflowViewStateService.ViewState>
@@ -868,7 +868,7 @@
         <Transition DisplayName="Succeeded" sap:VirtualizedContainerService.HintSize="429.6,509.6" sap2010:WorkflowViewState.IdRef="Transition_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:PointCollection x:Key="ConnectorLocation">370.4,236 523.6,236</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">370.4,228 400.4,228 400.4,236 523.6,236</av:PointCollection>
               <x:Int32 x:Key="SrcConnectionPointIndex">36</x:Int32>
               <x:Int32 x:Key="DestConnectionPointIndex">41</x:Int32>
             </scg:Dictionary>

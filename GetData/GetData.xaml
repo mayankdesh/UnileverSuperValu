@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>698.4,1865.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>698.4,1935.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -112,7 +112,7 @@
                     <OutArgument x:TypeArguments="x:String">[selectFolder]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[in_ProjectConfig.Item("USVD_P1_ReportPath").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[in_ProjectConfig.Item("USVD_ReportPath").ToString]</InArgument>
                   </Assign.Value>
                 </Assign>
                 <Assign DisplayName="Set fileCounter" sap:VirtualizedContainerService.HintSize="556,60" sap2010:WorkflowViewState.IdRef="Assign_19">
