@@ -247,16 +247,7 @@
                           </If>
                           <If Condition="[string.IsNullOrEmpty(row.Item(&quot;Cust Ref Nr&quot;).ToString)]" DisplayName="Validate Cust Ref Nr" sap:VirtualizedContainerService.HintSize="511.2,209.6" sap2010:WorkflowViewState.IdRef="If_3">
                             <If.Then>
-                              <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_11">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:String">[currentCustRefNr]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <Literal x:TypeArguments="x:String" Value="" />
-                                  </InArgument>
-                                </Assign.Value>
-                              </Assign>
+                              <Throw Exception="[new BusinessRuleException(&quot;Cust Ref Nr cannot be blank/null.&quot;)]" sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="Throw_3" />
                             </If.Then>
                             <If.Else>
                               <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_12">
@@ -271,16 +262,7 @@
                           </If>
                           <If Condition="[string.IsNullOrEmpty(row.Item(&quot;Ded Amt&quot;).ToString)]" DisplayName="Validate currentDedAmt" sap:VirtualizedContainerService.HintSize="511.2,209.6" sap2010:WorkflowViewState.IdRef="If_4">
                             <If.Then>
-                              <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_13">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:String">[currentDedAmt]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <Literal x:TypeArguments="x:String" Value="" />
-                                  </InArgument>
-                                </Assign.Value>
-                              </Assign>
+                              <Throw Exception="[new BusinessRuleException(&quot;Ded Amt cannot be blank/null.&quot;)]" sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="Throw_4" />
                             </If.Then>
                             <If.Else>
                               <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_14">
@@ -343,16 +325,7 @@
                           </If>
                           <If Condition="[string.IsNullOrEmpty(row.Item(&quot;Account&quot;).ToString)]" DisplayName="Validate Account Name" sap:VirtualizedContainerService.HintSize="511.2,209.6" sap2010:WorkflowViewState.IdRef="If_8">
                             <If.Then>
-                              <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_23">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:String">[accountName]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <Literal x:TypeArguments="x:String" Value="" />
-                                  </InArgument>
-                                </Assign.Value>
-                              </Assign>
+                              <Throw Exception="[new BusinessRuleException(&quot;Account cannot be blank/null.&quot;)]" sap:VirtualizedContainerService.HintSize="216,22.4" sap2010:WorkflowViewState.IdRef="Throw_5" />
                             </If.Then>
                             <If.Else>
                               <Assign sap:VirtualizedContainerService.HintSize="243.2,60" sap2010:WorkflowViewState.IdRef="Assign_24">
